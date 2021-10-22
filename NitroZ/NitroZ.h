@@ -2,6 +2,7 @@
 
 #include "NitroZUtils.h"
 #include "NitroApp.h"
+#include "GameWindow.h"
 
 #define START_NITROZ_GAME(classname) \
 int main()\

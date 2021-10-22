@@ -1,7 +1,7 @@
 #pragma once
 
 #include "NitroZUtils.h"
-
+#include "GameWindow.h"
 namespace NitroZ
 {
 	class NITROZ_API NitroApp
@@ -14,6 +14,7 @@ namespace NitroZ
 		NitroApp();
 
 	private:
+		GameWindow mNitroZWindow;
 
 	};
 }

@@ -10,17 +10,15 @@ namespace NitroZ
 	{
 		std::cout << "NitroZ is running..." << std::endl;
 
-		GLFWwindow* window;
-
-		glfwInit();
-		window = glfwCreateWindow(800, 600, "Test", NULL, NULL);
+		mNitroZWindow.CreateWindow(1100, 800, "TEST");
 
 		while (true) 
 		{
 			OnUpdate();
-
-			glfwSwapBuffers(window);
-			glfwPollEvents();
+			mNitroZWindow.SwapBuffers();
+			
+			mNitroZWindow.PollEvents();
+			
 		}
 	}
 
@@ -29,6 +27,6 @@ namespace NitroZ
 
 	}
 	NitroApp::NitroApp() {
-
+		
 	}
 }
