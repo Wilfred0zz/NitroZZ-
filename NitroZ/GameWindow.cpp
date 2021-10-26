@@ -6,11 +6,12 @@ namespace NitroZ {
 	GameWindow::GameWindow() 
 	{
 #ifdef NITROZ_WINDOWS
-		mWindow = new GLFWImplementation();
+		//std::unique_ptr<WindowImplementation> mWindow \ using unique pointer as modern c++ style so do not need special destructor
+		mWindow = std::unique_ptr<WindowImplementation>{ new GLFWImplementation() };
 #elif NITROZ_MAC
-		mWindow = new GLFWImplementation();
+		mWindow = std::unique_ptr<WindowImplementation>{ new GLFWImplementation() };
 #elif NITROZ_LINUX
-		mWindow = new GLFWImplementation();
+		mWindow = std::unique_ptr<WindowImplementation>{ new GLFWImplementation() };
 #else 
 		#only_Windows_Linux_Mac_are_supported
 #endif

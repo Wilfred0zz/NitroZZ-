@@ -2,6 +2,7 @@
 
 #include "NitroZUtils.h"
 #include "WindowImplementation.h"
+#include "pch.h"
 
 namespace NitroZ {
 	class NITROZ_API GameWindow
@@ -15,6 +16,6 @@ namespace NitroZ {
 		int GetWindowHeight() const;
 
 	private:
-		WindowImplementation* mWindow; //interface class which has the following methods from GameWindow.cpp
+		std::unique_ptr<WindowImplementation> mWindow; //interface class which has the following methods from GameWindow.cpp
 	};
 }
