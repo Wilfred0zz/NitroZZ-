@@ -36,6 +36,9 @@
     <ClInclude Include="GLFWImplementation\GlFWImplementation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="OpenGLSprite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="NitroApp.cpp">
@@ -48,6 +51,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GLFWImplementation\GLFWImplementation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenGLSprite.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
