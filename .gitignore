@@ -9,3 +9,6 @@ SaucelelGame/Debug
 SaucelelGame/Release
 
 glfw/build
+
+stbi/Debug
+stbi/Release
