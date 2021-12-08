@@ -3,6 +3,7 @@
 #include "NitroApp.h"
 #include "Sprite.h"
 #include "Shader.h"
+#include "Renderer.h"
 
 #define GLFW_INCLUDE_NONE
 #include "GLFW/glfw3.h"
@@ -18,32 +19,34 @@ namespace NitroZ
 
 		mNitroZWindow.CreateWindow(1100, 800, "TEST");
 
+		Renderer::Init();
 
 		//Shaders
 		NitroZ::Shader myShader;
-		myShader.Load("Assests/Shader/myVertexShaders.glsl",
-			"Assests/Shader/myFragmentShader.glsl");
+		myShader.Load("/Users/wilfr/SauceGameZ/SaucelelGame/NitroZ/Assets/Shader/myVertexShaders.glsl",
+			"/Users/wilfr/SauceGameZ/SaucelelGame/NitroZ/Assets/Shader/myFragmentShader.glsl");
+		myShader.SetVec2IntUniform("screenSize",
+			mNitroZWindow.GetWindowWidth(),
+			mNitroZWindow.GetWindowHeight());
 
 		//Texture
 		NitroZ::Sprite fish;
-		fish.LoadImage("Assests/Textures/Test.png");
+		fish.LoadImage("/Users/wilfr/SauceGameZ/SaucelelGame/NitroZ/Assets/Textures/Test.png");
 
 		while (true) 
 		{
+
+			Renderer::ClearFrame();
 			OnUpdate();
 
-			glClearColor(0.0f, 0.0f, 0.5f, 1.0f);
-			glClear(GL_COLOR_BUFFER_BIT);
 
-			fish.Bind();
-
-			myShader.Use();
-			glBindVertexArray(VAO);
-			glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+			Renderer::Draw(fish, 100, 50, fish.GetWidth(), fish.GetHeight(), myShader);
 
 			mNitroZWindow.SwapBuffers();
 			
 			mNitroZWindow.PollEvents();
+
+			Renderer::ShutDown();
 			
 		}
 	}

@@ -8,7 +8,8 @@ namespace NitroZ {
 	}
 	void GLFWImplementation::CreateWindow(int width, int height, const std::string& name)
 	{
-		mWindow = glfwCreateWindow(width, height, name.c_str(), nullptr, nullptr);
+		mWindow = glfwCreateWindow(width, height, name.c_str(), NULL, NULL);
+		glfwMakeContextCurrent(mWindow);
 	}
 	void GLFWImplementation::SwapBuffers()
 	{

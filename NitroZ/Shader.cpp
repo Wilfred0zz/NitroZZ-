@@ -19,6 +19,11 @@ namespace NitroZ {
 		mShader->Load(vertexFile, fragmentFile);
 	}
 
+	void Shader::SetVec2IntUniform(const std::string& unifName, int first, int second)
+	{
+		mShader->SetVec2IntUniform(unifName, first, second);
+	}
+
 	void Shader::Use()
 	{
 		mShader->Use();
