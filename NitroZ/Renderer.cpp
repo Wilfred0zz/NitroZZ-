@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "Renderer.h"
-#include "OpenGLimpl\OpenGLRenderer.h"
+#include "OpenGLimpl/OpenGLRenderer.h"
 
 namespace NitroZ
 {

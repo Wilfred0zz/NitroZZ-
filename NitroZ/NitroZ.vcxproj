@@ -90,7 +90,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>C:\Users\wilfr\SauceGameZ\SaucelelGame\glad\include;C:\Users\wilfr\SauceGameZ\SaucelelGame\stbi;C:\Users\wilfr\SauceGameZ\SaucelelGame\NitroZ;C:\Users\wilfr\SauceGameZ\SaucelelGame\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)NitroZ;$(SolutionDir)glfw\include;$(SolutionDir)glad\include;C:\Users\wilfr\SauceGameZ\SaucelelGame\stbi;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -106,7 +106,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NITROZ_LIB;NITROZ_WINDOWS;NITROZ_OPENGL;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\wilfr\SauceGameZ\SaucelelGame\glad\include;C:\Users\wilfr\SauceGameZ\SaucelelGame\stbi;C:\Users\wilfr\SauceGameZ\SaucelelGame\NitroZ;C:\Users\wilfr\SauceGameZ\SaucelelGame\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)NitroZ;$(SolutionDir)glfw\include;$(SolutionDir)glad\include;C:\Users\wilfr\SauceGameZ\SaucelelGame\stbi;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
@@ -126,7 +126,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>C:\Users\wilfr\SauceGameZ\SaucelelGame\glad\include;C:\Users\wilfr\SauceGameZ\SaucelelGame\stbi;C:\Users\wilfr\SauceGameZ\SaucelelGame\NitroZ;C:\Users\wilfr\SauceGameZ\SaucelelGame\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)NitroZ;$(SolutionDir)glfw\include;$(SolutionDir)glad\include;C:\Users\wilfr\SauceGameZ\SaucelelGame\stbi;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -142,7 +142,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NITROZ_LIB;NITROZ_WINDOWS;NITROZ_OPENGL;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\wilfr\SauceGameZ\SaucelelGame\glad\include;C:\Users\wilfr\SauceGameZ\SaucelelGame\stbi;C:\Users\wilfr\SauceGameZ\SaucelelGame\NitroZ;C:\Users\wilfr\SauceGameZ\SaucelelGame\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)NitroZ;$(SolutionDir)glfw\include;$(SolutionDir)glad\include;C:\Users\wilfr\SauceGameZ\SaucelelGame\stbi;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
@@ -197,7 +197,7 @@
       <Project>{1d99bb96-c93e-3f16-984e-fec12795d829}</Project>
     </ProjectReference>
     <ProjectReference Include="..\stbi\stbi.vcxproj">
-      <Project>{22f3196d-3398-48c6-b1dd-9010936b9440}</Project>
+      <Project>{0508c6fd-6288-47c2-83c2-a5c125fc5218}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

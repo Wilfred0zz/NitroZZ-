@@ -10,10 +10,7 @@ namespace NitroZ {
 		LoadImage(pictureFile);
 	}
 
-	OpenGLSprite::~OpenGLSprite() 
-	{
-		//lol
-	}
+	OpenGLSprite::~OpenGLSprite() {}
 
 	void OpenGLSprite::LoadImage(const std::string& pictureFile)
 	{

@@ -12,3 +12,5 @@ glfw/build
 
 stbi/Debug
 stbi/Release
+
+glad/x64

@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "Sprite.h"
-#include "OpenGlimpl/OpenGLSprite.h"
+#include "OpenGLimpl/OpenGLSprite.h"
 
 namespace NitroZ {
 	Sprite::Sprite()
@@ -8,7 +8,7 @@ namespace NitroZ {
 #ifdef NITROZ_OPENGL
 		mSpriteImplementation = std::unique_ptr<SpriteImplementation>{ new OpenGLSprite };
 #else
-		#only_OpenGL_is_supported_so_far
+#only_OpenGL_is_supported_so_far
 #endif
 	}
 	void Sprite::LoadImage(const std::string& pictureFile)

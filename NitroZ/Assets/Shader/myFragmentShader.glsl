@@ -1,11 +1,11 @@
 #version 330 core
-	int vec2 TexCoords;
+in vec2 TexCoords;
 	
-	uniform sampler2D mypicture;
+uniform sampler2D mypicture;
 
-	out vec4 FragColor;
+out vec4 FragColor;
 	
-	void main()
-	{
-	   FragColor = texture(mypicture, TexCoords);
-	}
+void main()
+{
+	FragColor = texture(mypicture, TexCoords);
+}

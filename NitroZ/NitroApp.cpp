@@ -18,13 +18,13 @@ namespace NitroZ
 		std::cout << "NitroZ is running..." << std::endl;
 
 		mNitroZWindow.CreateWindow(1100, 800, "TEST");
-
 		Renderer::Init();
 
-		//Shaders
+		////Shaders
 		NitroZ::Shader myShader;
-		myShader.Load("/Users/wilfr/SauceGameZ/SaucelelGame/NitroZ/Assets/Shader/myVertexShaders.glsl",
-			"/Users/wilfr/SauceGameZ/SaucelelGame/NitroZ/Assets/Shader/myFragmentShader.glsl");
+		myShader.Load("C:/Users/wilfr/SauceGameZ/SaucelelGame/NitroZ/Assets/Shader/myVertexShader.glsl",
+			"C:/Users/wilfr/SauceGameZ/SaucelelGame/NitroZ/Assets/Shader/myFragmentShader.glsl");
+		////
 		myShader.SetVec2IntUniform("screenSize",
 			mNitroZWindow.GetWindowWidth(),
 			mNitroZWindow.GetWindowHeight());
@@ -46,9 +46,10 @@ namespace NitroZ
 			
 			mNitroZWindow.PollEvents();
 
-			Renderer::ShutDown();
+			
 			
 		}
+		Renderer::ShutDown();
 	}
 
 	void NitroApp::OnUpdate() 

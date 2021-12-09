@@ -15,6 +15,10 @@ elseif(UNIX)
 	add_definitions(-DNITROZ_LINUX)
 endif()
 
+add_definitions(-DNITROZ_OPENGL)
+
 add_subdirectory(SaucelelGame)
 add_subdirectory(NitroZ)
 add_subdirectory(glfw)
+add_subdirectory(glad)
+add_subdirectory(stbi)
