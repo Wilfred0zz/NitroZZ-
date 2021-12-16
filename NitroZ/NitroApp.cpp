@@ -22,8 +22,8 @@ namespace NitroZ
 
 		////Shaders
 		NitroZ::Shader myShader;
-		myShader.Load("C:/Users/wilfr/SauceGameZ/SaucelelGame/NitroZ/Assets/Shader/myVertexShader.glsl",
-			"C:/Users/wilfr/SauceGameZ/SaucelelGame/NitroZ/Assets/Shader/myFragmentShader.glsl");
+		myShader.Load("/Assets/Shader/myVertexShader.glsl",
+			"/Assets/Shader/myFragmentShader.glsl");
 		////
 		myShader.SetVec2IntUniform("screenSize",
 			mNitroZWindow.GetWindowWidth(),
@@ -31,7 +31,7 @@ namespace NitroZ
 
 		//Texture
 		NitroZ::Sprite fish;
-		fish.LoadImage("/Users/wilfr/SauceGameZ/SaucelelGame/NitroZ/Assets/Textures/Test.png");
+		fish.LoadImage("/Assets/Textures/Test.png");
 
 		while (true) 
 		{
