@@ -8,3 +8,9 @@
 #else
 	#define NITROZ_API
 #endif
+
+#ifdef NITROZ_DEBUG
+	#define NITROZ_LOG(x) std::cout<<x<<std::endl;
+#else 
+	#define NITROZ_LOG(x)
+#endif
