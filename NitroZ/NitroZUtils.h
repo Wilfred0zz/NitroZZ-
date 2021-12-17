@@ -3,7 +3,7 @@
 	#ifdef NITROZ_LIB
 		#define NITROZ_API __declspec(dllexport)
 	#else
-		#define NITROZ_API __declspec(dllexport)
+		#define NITROZ_API __declspec(dllimport)
 	#endif
 #else
 	#define NITROZ_API

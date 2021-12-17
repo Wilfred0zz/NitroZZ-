@@ -16,8 +16,10 @@ namespace NitroZ
 	void NitroApp::Run()
 	{
 		NITROZ_LOG("Nitroz app is running...");
-		
-		mNitroZWindow.CreateWindow(800, 600, "TEST");
+
+
+		mNitroZWindow.CreateWindow(1280, 960, "TEST");
+
 		Renderer::Init();
 
 		////Shaders
