@@ -6,6 +6,7 @@
 #include "Sprite.h"
 #include "Shader.h"
 #include "Renderer.h"
+#include "Events.h"
 
 #define START_NITROZ_GAME(classname) \
 int main()\

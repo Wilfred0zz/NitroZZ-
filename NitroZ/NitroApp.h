@@ -12,7 +12,7 @@ namespace NitroZ
 	public:
 		void Run();
 		virtual void OnUpdate();
-
+		virtual void OnKeyPressed(KeyPressedEvent& event);
 	protected:
 		NitroApp();
 

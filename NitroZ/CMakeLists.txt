@@ -16,7 +16,7 @@ set(HEADER_FILES
 	NitroZUtils.h 
 	WindowImplementation.h 
 	GameWindow.h 
-	GLFWImplementation/GLFWImplementation.h
+	GLFWImplementation/GlFWImplementation.h
 	Renderer.h
 	RendererImplementation.h
 	Shader.h

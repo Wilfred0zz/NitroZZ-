@@ -3,7 +3,7 @@
 #include "NitroZUtils.h"
 #include "WindowImplementation.h"
 #include "pch.h"
-
+#include "Events.h"
 namespace NitroZ {
 	class NITROZ_API GameWindow
 	{
@@ -14,6 +14,8 @@ namespace NitroZ {
 		void PollEvents();
 		int GetWindowWidth() const;
 		int GetWindowHeight() const;
+		void SetKeyPressedCallback(std::function<void(KeyPressedEvent&)> func);
+
 
 	private:
 		std::unique_ptr<WindowImplementation> mWindow; //interface class which has the following methods from GameWindow.cpp

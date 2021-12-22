@@ -44,4 +44,9 @@ namespace NitroZ {
 		return mWindow->GetWindowHeight();
 	}
 
+	void GameWindow::SetKeyPressedCallback(std::function<void(KeyPressedEvent&)> func)
+	{
+		mWindow->SetKeyPressedCallback(func);
+	}
+
 }

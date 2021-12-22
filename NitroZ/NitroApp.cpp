@@ -18,7 +18,11 @@ namespace NitroZ
 		NITROZ_LOG("Nitroz app is running...");
 
 
-		mNitroZWindow.CreateWindow(800, 600, "TEST");
+		mNitroZWindow.CreateWindow(1280, 800, "TEST");
+
+		mNitroZWindow.SetKeyPressedCallback([this](KeyPressedEvent& event) {
+			OnKeyPressed(event);
+			});
 
 		Renderer::Init();
 
@@ -62,6 +66,10 @@ namespace NitroZ
 	void NitroApp::OnUpdate() 
 	{
 
+	}
+	void NitroApp::OnKeyPressed(KeyPressedEvent& event)
+	{
+		NITROZ_LOG(event.GetKeyCode());
 	}
 	NitroApp::NitroApp() {
 		
