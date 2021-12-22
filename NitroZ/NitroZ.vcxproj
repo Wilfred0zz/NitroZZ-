@@ -158,6 +158,7 @@
     <ClInclude Include="Events.h" />
     <ClInclude Include="GameWindow.h" />
     <ClInclude Include="GLFWImplementation\GlFWImplementation.h" />
+    <ClInclude Include="KeyCodes.h" />
     <ClInclude Include="NitroApp.h" />
     <ClInclude Include="NitroZ.h" />
     <ClInclude Include="NitroZUtils.h" />

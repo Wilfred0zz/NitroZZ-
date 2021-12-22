@@ -31,7 +31,9 @@ namespace NitroZ
 
 	void Renderer::ShutDown()
 	{
-		if (mInstance != nullptr)
+		if (mInstance != nullptr) {
 			delete mInstance;
+			mInstance = nullptr;
+		}
 	}
 }

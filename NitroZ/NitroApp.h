@@ -13,6 +13,8 @@ namespace NitroZ
 		void Run();
 		virtual void OnUpdate();
 		virtual void OnKeyPressed(KeyPressedEvent& event);
+		int GetGameWindowWidth() const;
+		int GetGameWindowHeight() const;
 	protected:
 		NitroApp();
 

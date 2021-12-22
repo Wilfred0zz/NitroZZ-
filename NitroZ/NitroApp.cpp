@@ -18,26 +18,6 @@ namespace NitroZ
 		NITROZ_LOG("Nitroz app is running...");
 
 
-		mNitroZWindow.CreateWindow(1280, 800, "TEST");
-
-		mNitroZWindow.SetKeyPressedCallback([this](KeyPressedEvent& event) {
-			OnKeyPressed(event);
-			});
-
-		Renderer::Init();
-
-		////Shaders
-		NitroZ::Shader myShader;
-		myShader.Load("Assets/Shader/myVertexShader.glsl",
-			"Assets/Shader/myFragmentShader.glsl");
-		////
-		myShader.SetVec2IntUniform("screenSize",
-			mNitroZWindow.GetWindowWidth(),
-			mNitroZWindow.GetWindowHeight());
-
-		//Texture
-		NitroZ::Sprite fish;
-		fish.LoadImage("Assets/Textures/Test.png");
 
 		mTimeOfNextFrame = std::chrono::steady_clock::now() + mFrameDuration;
 
@@ -48,8 +28,6 @@ namespace NitroZ
 			Renderer::ClearFrame();
 			OnUpdate();
 
-
-			Renderer::Draw(fish, 100, 50, fish.GetWidth(), fish.GetHeight(), myShader);
 
 			std::this_thread::sleep_until(mTimeOfNextFrame);
 
@@ -71,7 +49,21 @@ namespace NitroZ
 	{
 		NITROZ_LOG(event.GetKeyCode());
 	}
+	int NitroApp::GetGameWindowWidth() const
+	{
+		return mNitroZWindow.GetWindowWidth();
+	}
+	int NitroApp::GetGameWindowHeight() const
+	{
+		return mNitroZWindow.GetWindowHeight();
+	}
 	NitroApp::NitroApp() {
-		
+		mNitroZWindow.CreateWindow(1280, 800, "SaverGame");
+
+		mNitroZWindow.SetKeyPressedCallback([this](KeyPressedEvent& event) {
+			OnKeyPressed(event);
+			});
+
+		Renderer::Init();
 	}
 }

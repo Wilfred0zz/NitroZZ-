@@ -3,7 +3,7 @@
 
 namespace NitroZ {
 
-	class KeyPressedEvent {
+	class NITROZ_API KeyPressedEvent {
 	public:
 		KeyPressedEvent(int keyCode);
 		int GetKeyCode() const;
