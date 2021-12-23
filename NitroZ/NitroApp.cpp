@@ -58,7 +58,7 @@ namespace NitroZ
 		return mNitroZWindow.GetWindowHeight();
 	}
 	NitroApp::NitroApp() {
-		mNitroZWindow.CreateWindow(1280, 800, "SaverGame");
+		mNitroZWindow.CreateWindow(800, 800, "SaverGame");
 
 		mNitroZWindow.SetKeyPressedCallback([this](KeyPressedEvent& event) {
 			OnKeyPressed(event);

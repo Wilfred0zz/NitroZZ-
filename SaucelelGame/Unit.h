@@ -15,7 +15,7 @@ public:
 	int GetSpeed() const;
 
 	//CollideWith returns true is this unit and other unit collide( overlap )
-	bool CollideWidth(const Unit &other) const;
+	bool CollideWith(const Unit &other) const;
 
 	void Draw(NitroZ::Shader & shader);
 
@@ -32,6 +32,7 @@ public:
 	void UpdatePosition();
 
 private:
+	bool IsPositionPossible(int newX, int newY) const;
 	NitroZ::Sprite mImage;
 	int mPosX;
 	int mPosY;

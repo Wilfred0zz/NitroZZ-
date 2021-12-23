@@ -40,7 +40,7 @@ int Unit::GetSpeed() const
     return mSpeed;
 }
 
-bool Unit::CollideWidth(const Unit& other) const
+bool Unit::CollideWith(const Unit& other) const
 {
     int oXleft{ other.GetPosX() };
     int oXright{ other.GetPosX() + other.GetUnitWidth() };
@@ -79,16 +79,32 @@ void Unit::UpdatePosition()
 {
     switch (mDirection) {
     case Direction::Down:
-         mPosY -= mSpeed;
+        if (IsPositionPossible(mPosX, mPosY - mSpeed))
+            mPosY -= mSpeed;
          break;
     case Direction::Up:
-         mPosY += mSpeed;
+        if (IsPositionPossible(mPosX, mPosY + mSpeed))
+            mPosY += mSpeed;
          break;
     case Direction::Left:
-        mPosX -= mSpeed;
+        if (IsPositionPossible(mPosX - mSpeed, mPosY))
+            mPosX -= mSpeed;
         break;
     case Direction::Right:
-        mPosX += mSpeed;
+        if (IsPositionPossible(mPosX + mSpeed, mPosY))
+            mPosX += mSpeed;
         break;
     }
+}
+
+bool Unit::IsPositionPossible(int newX, int newY) const
+{
+    if ((newX < 0) ||
+        (newY < 0) ||
+        (newX + mImage.GetWidth() > 800) ||
+        (newY + mImage.GetHeight() > 800)) 
+        return false;
+    else
+        return true;
+
 }

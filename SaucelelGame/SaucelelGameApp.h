@@ -1,6 +1,7 @@
 #pragma once
 #include "NitroZ.h"
 #include "Unit.h"
+#include <vector>
 class SaucelelGameApp : public NitroZ::NitroApp
 {
 public:
@@ -10,6 +11,7 @@ public:
 
 private:
 	Unit mHero;
-
+	std::vector<Unit> mViruses;
+	int mFrameCounter;
 	NitroZ::Shader mShader;
 };
