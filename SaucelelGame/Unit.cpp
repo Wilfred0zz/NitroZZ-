@@ -49,12 +49,14 @@ bool Unit::CollideWith(const Unit& other) const
 
     bool intersectOnX{
         (mPosX <= oXleft && oXleft <= mPosX + GetUnitWidth()) ||
-        (mPosX <= oXright && oXright <= mPosX + GetUnitWidth())
+        (mPosX <= oXright && oXright <= mPosX + GetUnitWidth()) ||
+        (oXleft <= mPosX && mPosX + GetUnitWidth() <= oXright)
     };
 
     bool intersectOnY{
          (mPosY<=oYbottom && oYbottom<= mPosY+GetUnitHeight()) ||
-         (mPosY <= oYtop && oYtop <= mPosY + GetUnitHeight())
+         (mPosY <= oYtop && oYtop <= mPosY + GetUnitHeight()) ||
+        (oYbottom <= mPosY && mPosY + GetUnitHeight() <= oYtop)
     };
 
     return intersectOnX && intersectOnY;
