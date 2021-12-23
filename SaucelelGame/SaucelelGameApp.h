@@ -12,6 +12,9 @@ public:
 private:
 	Unit mHero;
 	std::vector<Unit> mViruses;
+	std::vector<Unit> mRedVirus;
+	Unit mBackground;
 	int mFrameCounter;
 	NitroZ::Shader mShader;
+
 };

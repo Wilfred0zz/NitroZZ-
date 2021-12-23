@@ -1,6 +1,6 @@
 #include "SaucelelGameApp.h"
 
-SaucelelGameApp::SaucelelGameApp() : mHero("Assets/Textures/Hero.png", 0, 0, 10), mFrameCounter(0)
+SaucelelGameApp::SaucelelGameApp() : mHero("Assets/Textures/Hero.png", 0, 0, 10), mFrameCounter(0), mBackground("Assets/Textures/Background.png", 0,0,0 )
 {
 	mShader.Load("Assets/Shader/myVertexShader.glsl", "Assets/Shader/myFragmentShader.glsl");
 	mShader.SetVec2IntUniform("screenSize", 800, 800);
@@ -9,30 +9,35 @@ SaucelelGameApp::SaucelelGameApp() : mHero("Assets/Textures/Hero.png", 0, 0, 10)
 void SaucelelGameApp::OnUpdate()
 {
 	mHero.UpdatePosition();
+	mBackground.Draw(mShader);
 
+	int regularVirusSize = 0;
 	//update existing viruses
 	for (auto& virus : mViruses)
 	{
 		virus.UpdatePosition();
 	}
-	////introduce new virus every second
-	if (mFrameCounter % FRAMES_PER_SECOND == 0 && mViruses.size()<10)
+	for (auto& Redvirus : mRedVirus)
 	{
-		int newX{ rand() % 700 };
-		int newY{ rand() % 700 };
+		Redvirus.UpdatePosition();
+	}
+	////introduce new virus every second
+	if (mFrameCounter % FRAMES_PER_SECOND == 0 && mViruses.size()<20)
+	{
+		int newX{ rand()% 790 };
+		int newY{ 780 };
 
 		Unit::Direction newDir;
-		int dirVal{ rand() % 4};
+		int dirVal{ rand() % 1};
 		if (dirVal == 0)
 			newDir = Unit::Direction::Down;
-		else if (dirVal == 1)
-			newDir = Unit::Direction::Up;
-		else if (dirVal == 2)
-			newDir = Unit::Direction::Left;
 		else 
-			newDir = Unit::Direction::Right;
-
-		mViruses.push_back(Unit{ "Assets/Textures/Virus.png", newX, newY, 10 });
+			newDir = Unit::Direction::Up;
+		if (mFrameCounter > 20) {
+			mRedVirus.push_back(Unit{ "Assets/Textures/RedVirus.png", newX, newY-80,  12 });
+			mRedVirus.back().SetDirection(newDir);
+		}
+		mViruses.push_back(Unit{ "Assets/Textures/Virus.png", newX, newY, 18 });
 		mViruses.back().SetDirection(newDir);
 
 	}
@@ -41,16 +46,31 @@ void SaucelelGameApp::OnUpdate()
 	while(it != mViruses.end()) {
 		if (mHero.CollideWith(*it))
 		{
+			regularVirusSize++;
 			it = mViruses.erase(it);
 		}
 		else {
 			it++;
 		}
 	}
+	auto itr = mRedVirus.begin();
+	while (itr != mRedVirus.end()) {
+		if (mHero.CollideWith(*itr))
+		{
+			itr = mRedVirus.erase(itr);
+		}
+		else {
+			itr++;
+		}
+	}
 
 	for (auto& virus : mViruses) {
 		virus.Draw(mShader);
 	}
+	for (auto& Redvirus : mRedVirus) {
+		Redvirus.Draw(mShader);
+	}
+
 	mHero.Draw(mShader);
 	mFrameCounter++;
 }
