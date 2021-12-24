@@ -22,7 +22,7 @@ void SaucelelGameApp::OnUpdate()
 		Redvirus.UpdatePosition();
 	}
 	////introduce new virus every second
-	if (mFrameCounter % FRAMES_PER_SECOND == 0 && mViruses.size()<20)
+	if (mFrameCounter % FRAMES_PER_SECOND == 0 && mViruses.size()<15)
 	{
 		int newX{ rand()% 790 };
 		int newY{ 780 };
@@ -34,7 +34,7 @@ void SaucelelGameApp::OnUpdate()
 		else 
 			newDir = Unit::Direction::Up;
 		if (mFrameCounter > 20) {
-			mRedVirus.push_back(Unit{ "Assets/Textures/RedVirus.png", newX, newY-80,  12 });
+			mRedVirus.push_back(Unit{ "Assets/Textures/RedVirus.png", newX+30, newY-80,  12 });
 			mRedVirus.back().SetDirection(newDir);
 		}
 		mViruses.push_back(Unit{ "Assets/Textures/Virus.png", newX, newY, 18 });
