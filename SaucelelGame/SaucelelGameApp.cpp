@@ -22,7 +22,7 @@ void SaucelelGameApp::OnUpdate()
 		Redvirus.UpdatePosition();
 	}
 	////introduce new virus every second
-	if (mFrameCounter % FRAMES_PER_SECOND == 0 && mViruses.size()<15)
+	if (mFrameCounter % FRAMES_PER_SECOND == 0 && mViruses.size()<25)
 	{
 		int newX{ rand()% 790 };
 		int newY{ 780 };
@@ -34,7 +34,7 @@ void SaucelelGameApp::OnUpdate()
 		else 
 			newDir = Unit::Direction::Up;
 		if (mFrameCounter > 20) {
-			mRedVirus.push_back(Unit{ "Assets/Textures/RedVirus.png", newX+30, newY-80,  12 });
+			mRedVirus.push_back(Unit{ "Assets/Textures/RedVirus.png", newX+35, newY-90,  12 });
 			mRedVirus.back().SetDirection(newDir);
 		}
 		mViruses.push_back(Unit{ "Assets/Textures/Virus.png", newX, newY, 18 });
@@ -48,6 +48,8 @@ void SaucelelGameApp::OnUpdate()
 		{
 			regularVirusSize++;
 			it = mViruses.erase(it);
+			//HeroSpeed = HeroSpeed - 1;
+			isAlive = true;
 		}
 		else {
 			it++;
@@ -58,6 +60,8 @@ void SaucelelGameApp::OnUpdate()
 		if (mHero.CollideWith(*itr))
 		{
 			itr = mRedVirus.erase(itr);
+			//HeroSpeed = HeroSpeed - 2;
+			isAlive = false;
 		}
 		else {
 			itr++;
@@ -71,7 +75,9 @@ void SaucelelGameApp::OnUpdate()
 		Redvirus.Draw(mShader);
 	}
 
-	mHero.Draw(mShader);
+	if (isAlive) {
+		mHero.Draw(mShader);
+	}
 	mFrameCounter++;
 }
 

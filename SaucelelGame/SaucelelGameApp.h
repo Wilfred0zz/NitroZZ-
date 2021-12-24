@@ -8,6 +8,8 @@ public:
 	SaucelelGameApp();
 	virtual void OnUpdate() override;
 	virtual void OnKeyPressed(NitroZ::KeyPressedEvent& event) override;
+	int HeroSpeed = 15;
+	bool isAlive = true;
 
 private:
 	Unit mHero;

@@ -1,5 +1,5 @@
 Added background
 There are more than one enemies 
 The enemies only fall from the top of screen
- Hero must avoid the viruses
+ Hero must avoid the red viruses or else he will disappear
 
