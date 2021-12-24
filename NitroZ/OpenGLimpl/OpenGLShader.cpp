@@ -3,11 +3,10 @@
 #include "glad/glad.h"
 
 namespace NitroZ {
-	void OpenGLShader::Load(const std::string& vertexFile, const std::string& fragmentFile)
-	{
+	void OpenGLShader::Load(const std::string& vertexFile, const std::string& fragmentFile){
 		std::ifstream vertexFileStream{ vertexFile };
 		if (!vertexFileStream.is_open())
-			std::cout << "ERROR: failed to open vertex shader file !!!" << std::endl;
+			std::cout << "ERROR: failed to open vertex SHADER file !!!" << std::endl;
 
 		std::stringstream vertexStringStream;
 		vertexStringStream << vertexFileStream.rdbuf();
@@ -15,22 +14,24 @@ namespace NitroZ {
 		const char* cVertexCode{ vertexCode.c_str() };
 		vertexFileStream.close();
 
+
 		unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
+
 		glShaderSource(vertexShader, 1, &cVertexCode, NULL);
 		glCompileShader(vertexShader);
 		// check for shader compile errors
 		int success;
 		char infoLog[512];
 		glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &success);
-		if (!success)
-		{
+		if (!success){
 			glGetShaderInfoLog(vertexShader, 512, NULL, infoLog);
 			std::cout << "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n" << infoLog << std::endl;
 		}
 
 		std::ifstream fragmentFileStream{ fragmentFile };
 		if (!fragmentFileStream.is_open())
-			std::cout << "ERROR: failed to open fragment shader file !!!" << std::endl;
+			std::cout << "ERROR: failed to open Fragment shader file !!!" << std::endl;
+
 
 		std::stringstream fragmentStringStream;
 		fragmentStringStream << fragmentFileStream.rdbuf();
@@ -38,11 +39,12 @@ namespace NitroZ {
 		const char* cFragmentCode{ fragmentCode.c_str() };
 		fragmentFileStream.close();
 
-
 		//fragment shader
 		unsigned int fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
 		glShaderSource(fragmentShader, 1, &cFragmentCode, NULL);
 		glCompileShader(fragmentShader);
+
+
 		// check for shader compile errors
 		glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &success);
 		if (!success)
